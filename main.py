@@ -133,10 +133,9 @@ for i in range(len(table)):
             print(quantity)
 
             if item_name in item_dic:
-                item_dic[item_name] = option + ' * ' + quantity
+                item_dic[item_name] = item_dic[item_name] + ' , ' + option + ' * ' + quantity
             else:
-                item_dic[item_name] = item_dic[item_name] + ' / ' + option + ' * ' + quantity
-
+                item_dic[item_name] = option + ' * ' + quantity
             cnt += 1
     except:
         name = driver.find_element(by=By.XPATH,
@@ -182,8 +181,8 @@ for i in range(len(table)):
     tmp_data.append(phone_num_1)
     tmp_data.append(phone_num_2)
     tmp_data.append(message)
-    tmp_data.append(' '.join(list(item_dic)))
-    tmp_data.append(' '.join(list(item_dic.values())))
+    tmp_data.append(' //'.join(list(item_dic)))
+    tmp_data.append(' // '.join(list(item_dic.values())))
     tmp_data.append('1')
     tmp_data.append('2750')
     tmp_data.append('030')
